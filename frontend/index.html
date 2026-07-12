@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Montage Suite — adEdits</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-dot"></span>Montage Suite <span class="brand-sub">/ adEdits</span></div>
+    <div class="topbar-right">
+      <span class="badge" id="encoder-badge">detecting…</span>
+      <button class="btn btn-primary" id="render-btn">RENDER</button>
+    </div>
+  </header>
+
+  <main class="deck">
+    <section class="stat-row">
+      <div class="stat-tile">
+        <div class="stat-label">Clips Queued</div>
+        <div class="stat-value" id="stat-clips">–</div>
+      </div>
+      <div class="stat-tile">
+        <div class="stat-label">Beats Detected</div>
+        <div class="stat-value" id="stat-beats">–</div>
+      </div>
+      <div class="stat-tile">
+        <div class="stat-label">Hardware</div>
+        <div class="stat-value accent" id="stat-hw">–</div>
+      </div>
+      <div class="stat-tile">
+        <div class="stat-label">Render Status</div>
+        <div class="stat-value" id="stat-status">idle</div>
+      </div>
+      <div class="stat-tile">
+        <div class="stat-label">Beats Assigned</div>
+        <div class="stat-value" id="stat-assigned">–</div>
+      </div>
+    </section>
+
+    <section class="card timeline-card">
+      <div class="card-title">Timeline</div>
+      <div class="timeline-scroll">
+        <canvas id="timeline-canvas" width="1400" height="200"></canvas>
+      </div>
+      <div class="card-footnote" id="timeline-note">Assign clips to beats to build the timeline</div>
+    </section>
+
+    <section class="card-grid">
+      <div class="card" id="clip-queue-card">
+        <div class="card-title">Clip Order &amp; Beat Assignment</div>
+        <div class="clip-order-list" id="clip-order-list"><div class="empty">Loading…</div></div>
+        <div class="audio-track-row" id="audio-track-row"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Clip Preview</div>
+        <video id="preview-video" controls></video>
+        <div class="card-footnote" id="preview-note">Select a clip from the queue</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Velocity Curve — active: <span id="active-curve-label">–</span></div>
+        <div class="curve-grid" id="curve-grid"><div class="empty">Loading…</div></div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Config</div>
+        <table class="config-table" id="config-table">
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <div class="card" id="render-monitor-card">
+        <div class="card-title">Render Monitor</div>
+        <div class="render-status-line">
+          <span id="render-stage">idle</span>
+          <span id="render-percent">0%</span>
+        </div>
+        <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+        <div class="render-log" id="render-log"></div>
+        <a id="output-link" class="btn btn-secondary output-link hidden" href="#" target="_blank">Open Output</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

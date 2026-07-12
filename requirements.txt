@@ -1,0 +1,6 @@
+numpy
+scipy
+opencv-python
+librosa
+fastapi
+uvicorn[standard]

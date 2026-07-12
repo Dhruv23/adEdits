@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.pyc
+.claude/
+
+# Planning docs / notes (keep README.md)
+*.md
+!README.md
+
+# Media & renders — not committed (kill-frame template is required app data, not a render artifact)
+*.mp4
+*.mp3
+*.png
+!backend/assets/**/*.png
+
+# User media & working data — not committed
+media/
